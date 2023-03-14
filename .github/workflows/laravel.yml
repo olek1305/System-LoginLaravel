@@ -20,6 +20,8 @@ jobs:
       run: php -r "file_exists('AboutMe/.env') || copy('AboutMe/.env.example', 'AboutMe/.env');"
     - name: Install zip
       run: sudo apt-get install -y zip
+    - name: Show composer logs
+      run: composer install --verbose
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
       env:
