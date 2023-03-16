@@ -1,1 +1,0 @@
-Project for study ;D
