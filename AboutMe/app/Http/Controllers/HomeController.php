@@ -19,6 +19,6 @@ class HomeController extends Controller
         $viewData["subtitle"] =  "About us";
         $viewData["description"] =  "This is a page about me";
         $viewData["author"] = "Developed by: Arcylisz";
-        return view('home.about')->with("viewData", $viewData);
+        return view('about.index')->with("viewData", $viewData);
     }
 }

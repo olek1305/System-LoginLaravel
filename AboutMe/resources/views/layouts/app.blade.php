@@ -24,9 +24,9 @@
                         class="img-thumbnail rounded mx-auto d-block animate__animated animate__tada">
                         <hr/>
                 </div>
-                <li><a href="/"> Home </a></li>
-                <li> Recommend Games </li>
-                <li> Recommend Books </li>
+                <li class="h2"><a href="/"> Home </a></li>
+                <li class="h2"><a href="/About"> About </a></li>
+                <li class="h2"><a href="/Book"> Recommend Books </a></li>
             </ul>
         </div>
         <div class="col-md-6 col-lg-10 mb-2">
@@ -35,7 +35,7 @@
             </nav>
 
             <div class="g-0 m-2">
-                @yield('home')
+                @yield('content')
             </div>
         </div>
     </div>
