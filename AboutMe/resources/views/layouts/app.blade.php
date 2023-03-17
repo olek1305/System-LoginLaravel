@@ -9,6 +9,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.js"
+        integrity="sha256-dWvV84T6BhzO4vG6gWhsWVKVoa4lVmLnpBOZh/CAHU4=" crossorigin="anonymous">
+    </script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>@yield('title', 'AboutMe')</title>
 </head>
 
@@ -22,11 +32,11 @@
                 <div>
                     <img src="{{ asset('/image/skull.webp') }}" alt="Skull"
                         class="img-thumbnail rounded mx-auto d-block animate__animated animate__tada">
-                        <hr/>
+                    <hr />
                 </div>
                 <li class="h2"><a href="/"> Home </a></li>
-                <li class="h2"><a href="/About"> About </a></li>
-                <li class="h2"><a href="/Book"> Recommend Books </a></li>
+                <li class="h2"><a href="/about"> About </a></li>
+                <li class="h2"><a href="/book"> Recommend Books </a></li>
             </ul>
         </div>
         <div class="col-md-6 col-lg-10 mb-2">
@@ -52,9 +62,7 @@
     </div>
     <!--footer-->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-    </script>
+
 </body>
 
 </html>
