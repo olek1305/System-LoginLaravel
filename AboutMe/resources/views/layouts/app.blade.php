@@ -16,13 +16,12 @@
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous">
     </script>
     <script src="https://code.jquery.com/jquery-3.6.4.slim.js"
-        integrity="sha256-dWvV84T6BhzO4vG6gWhsWVKVoa4lVmLnpBOZh/CAHU4=" crossorigin="anonymous">
-    </script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        integrity="sha256-dWvV84T6BhzO4vG6gWhsWVKVoa4lVmLnpBOZh/CAHU4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>@yield('title', 'AboutMe')</title>
 </head>
 
-<body class="bg-dark">
+<body class="bg-dark container-fluid">
     <div class="row g-0">
         <!--header-->
         <div class="p-4 col fixed text-white bg-dark nav flex-column">
@@ -30,8 +29,8 @@
             <hr />
             <ul class="nav flex-column text-center">
                 <div>
-                    <img src="{{ asset('/image/skull.webp') }}" alt="Skull"
-                        class="img-thumbnail rounded mx-auto d-block animate__animated animate__tada">
+                    <a href="/"><img src="{{ asset('/image/skull.webp') }}" alt="Skull"
+                        class="img-thumbnail rounded mx-auto d-block animate__animated animate__tada"></a>
                     <hr />
                 </div>
                 <li class="h2"><a href="/"> Home </a></li>
@@ -39,11 +38,42 @@
                 <li class="h2"><a href="/book"> Recommend Books </a></li>
             </ul>
         </div>
-        <div class="col-md-6 col-lg-10 mb-2">
-            <nav class="p-4 shadow text-center">
-                <span class="profile-font text-white">Arcylisz - AboutMe</span>
-            </nav>
-
+        <div class="col-md-6 col-lg-10 mb-2 align-middle">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <div class="d-flex w-100 justify-content-between">
+                            <div class="d-flex">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                            </div>
+                            <div class="d-flex justify-content-center w-100">
+                                <a class="navbar-brand" style="margin-left: 11%;" href="/">Arcylisz - AboutMe</a>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <div class="collapse navbar-collapse">
+                                    @guest
+                                        <ul class="navbar-nav">
+                                            <li class="nav-item"><a class="nav-link active text-white btn btn-primary m-1"
+                                                    href="{{ route('login') }}" role="button">Login</a></li>
+                                            <li class="nav-item"><a class="nav-link active text-white btn btn-primary m-1"
+                                                    href="{{ route('register') }}"role="button">Register</a></li>
+                                        </ul>
+                                    @else
+                                        <form id="logout" action="{{ route('logout') }}" method="POST">
+                                            <a role="button" class="nav-link active"
+                                                onclick="document.getElementById('logout').submit();">Logout</a>
+                                            @csrf
+                                        </form>
+                                    @endguest
+                                </div>
+                            </div>
+                        </div>
+                </nav>
+            </div>
             <div class="g-0 m-2">
                 @yield('content')
             </div>

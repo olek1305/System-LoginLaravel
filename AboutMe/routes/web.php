@@ -17,3 +17,5 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index")
 
 Route::get('/about', 'App\Http\Controllers\AboutController@about')->name("about.index");
 Route::get('/book', 'App\Http\Controllers\BookController@book')->name("book.index");
+
+Auth::routes();
