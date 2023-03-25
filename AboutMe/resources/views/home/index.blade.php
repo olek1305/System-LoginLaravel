@@ -57,6 +57,27 @@
                             </div>
                         </div>
                     </div>
+                    <div class="card bg-dark">
+                        <div class="card-header" id="headingFour">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                                    Update 1.05
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                            data-parent="#accordionExample">
+                            <div class="card-body bg-success">
+                                some update</br>
+                                add system login(No Database yet)</br>
+                                hard ass to fix div Arcylisz - AboutMe to center</br>
+                                UI change for system login</br>
+                                Composer: Add Vue.js  and Laravel/ui
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
