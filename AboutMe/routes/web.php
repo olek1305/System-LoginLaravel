@@ -20,4 +20,6 @@ Route::get('/about', 'App\Http\Controllers\AboutController@about')->name("about.
 Route::get('/books', 'App\Http\Controllers\BooksController@book')->name("book.index");
 #Route::get('/books', 'App\Http\Controllers\BooksController@book')->name("book.show");
 
+
 Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
+Auth::routes();
