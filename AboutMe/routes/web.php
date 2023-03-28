@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index");
 
 Route::get('/about', 'App\Http\Controllers\AboutController@about')->name("about.index");
-Route::get('/book', 'App\Http\Controllers\BookController@book')->name("book.index");
+Route::get('/books', 'App\Http\Controllers\BooksController@book')->name("book.index");
+#Route::get('/books', 'App\Http\Controllers\BooksController@book')->name("book.show");
 
-Auth::routes();
+Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");

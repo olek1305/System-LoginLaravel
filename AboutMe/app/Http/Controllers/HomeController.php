@@ -10,6 +10,7 @@ class HomeController extends Controller
     {
         $viewData = [];
         $viewData["title"] = "Home Page - AboutMe";
+
         return view('home.index')->with("viewData", $viewData);
     }
     public function about()
@@ -19,6 +20,7 @@ class HomeController extends Controller
         $viewData["subtitle"] =  "About us";
         $viewData["description"] =  "This is a page about me";
         $viewData["author"] = "Developed by: Arcylisz";
+        
         return view('about.index')->with("viewData", $viewData);
     }
 }
