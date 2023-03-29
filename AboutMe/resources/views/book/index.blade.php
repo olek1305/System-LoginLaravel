@@ -1,26 +1,17 @@
 @extends('layouts.app')
 @section('title', $viewData['title'])
 @section('content')
-    <div class="container my-4">
-        <div class="row">
-            @foreach($viewData["books"] as $book)
-                <div class="col-md-6 col-lg-3 mb-2">
-                    <div class="card" style="width: 18rem; margin-top: 2em">
-                        <img class="card-img-top img-fluid rounded" src="{{ asset('storage\PracticalLaravelMVC.webp') }}"
-                            alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">{{$viewData->title}}</h5>
-                            <p class="card-text">{{$viewData->author}}
-                            </p>
-                            <div class="justify-content-center d-flex">
-                                <a href="{{$viewData->link}}"
-                                    class="btn btn-primary">Link</a>
-                            </div>
-                        </div>
+    <div class="row">
+        @foreach ($viewData['books'] as $book)
+            <div class="col-md-4 col-lg-3 mb-2">
+                <div class="card">
+                    <img src="{{ asset('/storage/books/' . $book->getImage()) }}" class="card-img-top img-card">
+                    <div class="card-body text-center">
+                        <a href="{{ route('book.show', ['id' => $book->getId()]) }}"
+                            class="btn bg-primary text-white">{{ $book->getTitle() }}</a>
                     </div>
                 </div>
-            @endforeach
-        </div>
+            </div>
+        @endforeach
     </div>
-
 @endsection

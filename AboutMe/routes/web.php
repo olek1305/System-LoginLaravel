@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index");
 
 Route::get('/about', 'App\Http\Controllers\AboutController@about')->name("about.index");
-Route::get('/books', 'App\Http\Controllers\BooksController@book')->name("book.index");
-#Route::get('/books', 'App\Http\Controllers\BooksController@book')->name("book.show");
+Route::get('/books', 'App\Http\Controllers\BookController@index')->name("book.index");
+Route::get('/books/{id}', 'App\Http\Controllers\BookController@show')->name("book.show");
 
 
 Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
