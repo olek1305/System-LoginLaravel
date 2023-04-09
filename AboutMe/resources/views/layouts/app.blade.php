@@ -9,9 +9,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <script src="https://code.jquery.com/jquery-3.6.4.slim.js"
-        integrity="sha256-dWvV84T6BhzO4vG6gWhsWVKVoa4lVmLnpBOZh/CAHU4=" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <title>@yield('title', 'AboutMe')</title>
 </head>
 
@@ -27,53 +30,45 @@
                             class="img-thumbnail rounded mx-auto d-block animate__animated animate__tada"></a>
                     <hr />
                 </div>
-                <li class="h2"><a href="{{ route('home.index') }}"> Home </a></li>
-                <li class="h2"><a href="{{ route('about.index') }}"> About </a></li>
-                <li class="h2"><a href="{{ route('book.index') }}"> Recommend Books </a></li>
+                <li class="h2"><i class="bi bi-caret-right"></i><a href="{{ route('home.index') }}"> Home </a></li>
+                <li class="h2"><i class="bi bi-caret-right"></i><a href="{{ route('about.index') }}"> About </a>
+                </li>
+                <li class="h2"><i class="bi bi-caret-right"></i><a href="{{ route('book.index') }}"> Recommend Books
+                    </a></li>
             </ul>
         </div>
-        <div class="col-md-6 col-lg-10 mb-2 align-middle">
+        <div class="col-md-8 col-lg-9">
             <div class="row">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <div class="container-fluid">
-                        <div class="d-flex w-100 justify-content-between">
-                            <div class="d-flex">
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                                    aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                            </div>
-                            <div class="d-flex justify-content-center w-100">
-                                <a class="navbar-brand" style="margin-left: 11%;"
-                                    href="{{ route('home.index') }}">Arcylisz - AboutMe</a>
-                            </div>
-                            <div class="d-flex justify-content-end">
-                                <div class="collapse navbar-collapse">
-                                    @guest
-                                        <ul class="navbar-nav">
-                                            <li class="nav-item"><a class="nav-link active text-white btn btn-primary m-1"
-                                                    href="{{ route('login') }}" role="button">Login</a></li>
-                                            <li class="nav-item"><a class="nav-link active text-white btn btn-primary m-1"
-                                                    href="{{ route('register') }}"role="button">Register</a></li>
-                                        </ul>
-                                    @else
-                                        <form id="logout" action="{{ route('logout') }}" method="POST">
-                                            <a role="button" class="nav-link active"
-                                                onclick="document.getElementById('logout').submit();">Logout</a>
-                                            @csrf
-                                        </form>
-                                    @endguest
-                                </div>
-                            </div>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark" x-data="{ open: false }">
+                    <div class="container-fluid justify-content-center">
+                        <a class="navbar-brand" href="{{ route('home.index') }}">Arcylisz - AboutMe</a>
+                        <button class="navbar-toggler" type="button" @click="open = !open" :aria-expanded="open ? 'true' : 'false'" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div :class="{ 'collapse': !open, 'navbar-collapse': true, 'collapse.show': open, 'justify-content-end': true }">
+                            <ul class="navbar-nav">
+                                @guest
+                                    <li class="nav-item"><a class="nav-link active text-white btn btn-primary m-1"
+                                            href="{{ route('login') }}" role="button">Login</a></li>
+                                    <li class="nav-item"><a class="nav-link active text-white btn btn-primary m-1"
+                                            href="{{ route('register') }}"role="button">Register</a></li>
+                                @else
+                                    <form id="logout" action="{{ route('logout') }}" method="POST">
+                                        <a role="button" class="nav-link active"
+                                            onclick="document.getElementById('logout').submit();">Logout</a>
+                                        @csrf
+                                    </form>
+                                @endguest
+                            </ul>
                         </div>
+                    </div>
                 </nav>
             </div>
             <div class="g-0 m-2">
                 @yield('content')
             </div>
         </div>
-    </div>
+        
     <!-- footer -->
     <div class="copyright bg-dark py-4 text-center text-white fixed-bottom">
         <div class="container">

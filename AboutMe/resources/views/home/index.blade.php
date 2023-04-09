@@ -3,79 +3,63 @@
 @section('content')
     <div class="container text-center bg-primary mx-auto">
         <div class="row">
-            <div class="col-md-6 col-lg-12 mb-2 text-center bg-primary">
+            <div class="col-md-12 col-lg-12 mb-2 text-center bg-primary">
                 <h1 class="font-weight-bold text-warning"> Update-List </h1>
                 <div class="accordion" id="accordionExample">
-                    <div class="card bg-dark">
-                        <div class="card-header bg-dark" id="headingOne">
+                    <div class="card bg-dark" x-data="{ open: false }">
+                        <div class="card-header bg-dark">
                             <h2 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse"
-                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <button class="btn btn-link" @click="open = ! open">
                                     Update 1.02
                                 </button>
                             </h2>
                         </div>
-
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                            data-parent="#accordionExample">
-                            <div class="card-body bg-success">
-                                Add Home Page
-                            </div>
+                        <div class="card-body bg-success" x-show="open" @click.outside="open = false">
+                            Add Home Page
                         </div>
                     </div>
 
-                    <div class="card bg-dark">
-                        <div class="card-header bg-dark" id="headingTwo">
+                    <div class="card bg-dark" x-data="{ open: false }">
+                        <div class="card-header bg-dark">
                             <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <button class="btn btn-link collapsed" type="button" @click="open = ! open">
                                     Update 1.03
                                 </button>
                             </h2>
                         </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                            <div class="card-body bg-success">
-                                Add /About</br> Add /Book</br> Change HTTP
-                            </div>
+                        <div class="card-body bg-success" x-show="open" @click.outside="open = false">
+                            Add /About</br> Add /Book</br> Change HTTP
+
                         </div>
                     </div>
 
-                    <div class="card bg-dark">
-                        <div class="card-header" id="headingThree">
+                    <div class="card bg-dark" x-data="{ open: false }">
+                        <div class="card-header">
                             <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <button class="btn btn-link collapsed" @click="open = ! open">
                                     Update 1.04
                                 </button>
                             </h2>
                         </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                            data-parent="#accordionExample">
-                            <div class="card-body bg-success">
-                                Update home page</br>
-                                Update book
-                            </div>
+                        <div class="card-body bg-success" x-show="open" @click.outside="open = false">
+                            Update home page</br>
+                            Update book
                         </div>
                     </div>
-                    <div class="card bg-dark">
+                    <div class="card bg-dark" x-data="{ open: false }">
                         <div class="card-header" id="headingFour">
                             <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                    data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                                <button class="btn btn-link collapsed" @click="open = ! open">
                                     Update 1.05
                                 </button>
                             </h2>
                         </div>
-                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
-                            data-parent="#accordionExample">
-                            <div class="card-body bg-success">
-                                some update</br>
-                                add system login(No Database yet)</br>
-                                hard ass to fix div Arcylisz - AboutMe to center</br>
-                                UI change for system login</br>
-                                Composer: Add Vue.js  and Laravel/ui
-
-                            </div>
+                        <div class="card-body bg-success" x-show="open" @click.outside="open = false">
+                            some update</br>
+                            add system login(No Database yet)</br>
+                            hard ass to fix div Arcylisz - AboutMe to center</br>
+                            UI change for system login</br>
+                            Composer: Add Vue.js and Laravel/ui
                         </div>
                     </div>
                 </div>
